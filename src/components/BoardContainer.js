@@ -24,15 +24,11 @@ const Select = styled.div`
   cursor: pointer;
   justify-self: center;
   width: 100px;
-  /* padding: 0.5em; */
 `;
 
 const Wta = styled.div`
   background-color: ${(props) =>
     props.gender === "female" ? `#ce78cb` : `none`};
-  /* height: 100%;
-  
-  width: 100%; */
   padding: 0.5em;
   border-radius: 6px 0 0 6px;
   cursor: pointer;
@@ -40,8 +36,6 @@ const Wta = styled.div`
 
 const Atp = styled.div`
   background: ${(props) => (props.gender === "male" ? `#ce78cb` : `none`)};
-  /* height: 100%;
-  width: 100%; */
   padding: 0.5em;
   border-radius: 0 6px 6px 0;
   cursor: pointer;
@@ -50,9 +44,9 @@ const Atp = styled.div`
 
 const Container = styled.div`
   display: grid;
-  /* background: #fafafa;
-  z-index: -200; */
   position: relative;
+  margin: 0px;
+  padding: 0px;
 `;
 
 export default function BoardContainer() {
@@ -126,23 +120,10 @@ export default function BoardContainer() {
     console.log(playerArray);
   };
 
-  useEffect(() => console.log(playerArray));
-
-  const test = () => {
-    console.log("clicked");
-  };
-
   return (
     <Container>
-      <Jumbotron />
       <GlobalStyles />
-      {/* <button id="female" onClick={(e) => setGender(e.target.id)}>
-        Females
-      </button>
-      <button id="male" onClick={(e) => setGender(e.target.id)}>
-        Males
-      </button> */}
-
+      <Jumbotron />
       <Select>
         <Wta
           id="female"

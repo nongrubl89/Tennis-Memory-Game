@@ -3,26 +3,29 @@ import styled from "styled-components";
 import Blob from "./Blob";
 import Blob2 from "./Blob2";
 
-const CardsDivContainer = styled.div`
-  display: grid;
-  grid-template-columns: 10% 80% 10%;
-  background: #fafafa;
-  z-index: -5;
-  position: relative;
-`;
+// const CardsDivContainer = styled.div`
+//   /* display: grid;
+//   grid-template-columns: 10% 80% 10%; */
+//   background: #fafafa;
+//   z-index: -5;
+//   /* position: relative; */
+//   /* justify-content: center;
+//   justify-items: center; */
+// `;
 
 const CardsDiv = styled.div`
   margin: 10px;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
   justify-content: center;
-  grid-column: 2/3;
+  z-index: 10;
+  position: relative;
+  cursor: pointer;
 `;
 
 const PlayerCard = styled.div`
-  /* padding-bottom: 2em; */
-  /* padding-top: 2em; */
   margin: 1em;
   z-index: -4;
   display: grid;
@@ -91,10 +94,6 @@ export default function CardContainer({
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
-    return (
-      <CardsDivContainer>
-        <CardsDiv>{playerCards}</CardsDiv>
-      </CardsDivContainer>
-    );
+    return <CardsDiv>{playerCards}</CardsDiv>;
   }
 }
