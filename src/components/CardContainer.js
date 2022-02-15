@@ -13,6 +13,7 @@ const CardsDiv = styled.div`
   z-index: 10;
   position: relative;
   cursor: pointer;
+  margin-bottom: 5em;
 `;
 
 const PlayerCard = styled.div`

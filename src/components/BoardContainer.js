@@ -113,6 +113,9 @@ export default function BoardContainer() {
       setScore(0);
       setScoreMessage("Game Over!");
       setPlayerArray([]);
+      setTimeout(() => {
+        setScoreMessage((prevMessage) => "");
+      }, 2000);
     } else if (playerArray.length > 0 && !playerArray.includes(pName)) {
       setScore((prevScore) => score + 1);
       setScoreMessage("Great Job! +1 point!");
