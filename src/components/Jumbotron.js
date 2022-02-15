@@ -4,28 +4,21 @@ import styled from "styled-components";
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
   background: #ce78cb;
-  /* grid-gap: 1.5em; */
   align-items: center;
   opacity: 75%;
   padding: 4rem 2rem;
-  /* width: 100vw; */
 `;
 
 const Title = styled.h1`
   font-weight: 500;
   font-size: 3rem;
   justify-self: center;
-  /* display: grid;
-  justify-content: end;
-  align-content: center; */
 `;
 
 const Subtitle = styled.h4`
-  font-weight: 200;
-  /* width: 300px;
-  align-content: center; */
+  font-weight: 1rem;
+  font-weight: 400;
 `;
 
 export default function Jumbotron() {

@@ -3,19 +3,9 @@ import styled from "styled-components";
 import Blob from "./Blob";
 import Blob2 from "./Blob2";
 
-// const CardsDivContainer = styled.div`
-//   /* display: grid;
-//   grid-template-columns: 10% 80% 10%; */
-//   background: #fafafa;
-//   z-index: -5;
-//   /* position: relative; */
-//   /* justify-content: center;
-//   justify-items: center; */
-// `;
-
 const CardsDiv = styled.div`
   margin: 10px;
-  padding: 20px;
+  padding: 0 6em 0 6em;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-gap: 1rem;

@@ -11,14 +11,14 @@ const GlobalStyles = createGlobalStyle`
  
   body {
     font-family: 'Outfit', sans-serif;
+    background: #fafafa;
   }
   `;
 
 const Select = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px #ce78cb solid;
-  border-radius: 6px;
+  border: 0px;
   justify-items: center;
   margin: 1em;
   cursor: pointer;
@@ -32,6 +32,7 @@ const Wta = styled.div`
   padding: 0.5em;
   border-radius: 6px 0 0 6px;
   cursor: pointer;
+  border: 1px #ce78cb solid;
 `;
 
 const Atp = styled.div`
@@ -39,7 +40,7 @@ const Atp = styled.div`
   padding: 0.5em;
   border-radius: 0 6px 6px 0;
   cursor: pointer;
-  border-right: 5px solid #ce78cb;
+  border: 1px #ce78cb solid;
 `;
 
 const Container = styled.div`
@@ -115,6 +116,9 @@ export default function BoardContainer() {
     } else if (playerArray.length > 0 && !playerArray.includes(pName)) {
       setScore((prevScore) => score + 1);
       setScoreMessage("Great Job! +1 point!");
+    }
+    if (score === 9) {
+      setScoreMessage("You win!");
     }
 
     console.log(playerArray);
