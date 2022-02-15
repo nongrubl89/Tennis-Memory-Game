@@ -10,48 +10,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
-// const path = require("path");
 app.use("/public", express.static("public"));
 app.use("/public", express.static(__dirname + "/public/"));
 
-// app.use(express.static("public"));
-
-const db =
-  "mongodb+srv://lisab:fedex1@cluster0.qmdzu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const db = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.qmdzu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(4000))
   .catch((err) => console.log(err));
-
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//     cb(null, "./public/uploads");
-//   },
-
-//   filename: function (req, file, cb) {
-//     cb(
-//       null,
-//       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-//     );
-//   },
-// });
-
-// const fileFilter = (req, file, cb) => {
-//   // reject a file
-//   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-//     cb(null, true);
-//   } else {
-//     cb(null, false);
-//   }
-// };
-
-// const upload = multer({
-//   storage: storage,
-//   limits: {
-//     fileSize: 1024 * 1024 * 5,
-//   },
-//   fileFilter: fileFilter,
-// });
 
 app.get("/females", (req, res, next) => {
   Player.find()
