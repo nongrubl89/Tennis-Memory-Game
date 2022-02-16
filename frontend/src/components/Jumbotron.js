@@ -8,6 +8,9 @@ const Container = styled.div`
   align-items: center;
   opacity: 75%;
   padding: 4rem 2rem;
+  position: relative;
+  border-bottom: 0px;
+  overflow: hidden;
 `;
 
 const Title = styled.h1`
@@ -25,10 +28,10 @@ const BorderContainer = styled.div`
   color: #fafafa;
   left: 0;
   right: 0;
-  bottom: -1px;
+  bottom: -5px;
   transform: scaleX(-1);
   position: absolute;
-  margin-bottom: 140px;
+  /* margin-bottom: 1600px; */
 `;
 
 const Border = styled.svg`
